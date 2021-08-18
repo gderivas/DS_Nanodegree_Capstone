@@ -159,6 +159,7 @@ Training Models & Generating predictions - See Jupyter Notebook
 **Analysis**
 
 * Offers viewed by users have a direct impact in the amount of transactions spent.
+* It is difficult to see major differences between ages for the completition rate. Income is probably the reason here.
 
 **Predictions results:**
 

@@ -158,9 +158,7 @@ Training Models & Generating predictions - See Jupyter Notebook
 
 **Analysis**
 
-* 
-
-
+* Offers viewed by users have a direct impact in the amount of transactions spent.
 
 **Predictions results:**
 
@@ -179,6 +177,7 @@ We can see that altough the accuracy is above 80%, it doesn't mean its a good ac
 
 **Analysis:**
 * More in depth relationship analisys (e.g: relation of completition rate with client data and offer type)
+* Comparation of number/amount spent of transactions after an offer is viewed
 
 **Predictions:**
 * Feature engineering and use more features to optimize metrics

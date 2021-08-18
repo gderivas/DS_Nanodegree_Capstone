@@ -13,7 +13,10 @@ The Structure of the project is the following:
   - [2. Pre-processing](#2-pre-processing)
   - [3. Data Exploration and Visualizations](#3-data-exploration-and-visualizations)
   - [4. Modeling](#4-modeling)
-  - [5. Conclusions](#5-conclusions)
+    - [4.1 Model preparation](#41-model-preparation)
+    - [4.2 Training and Predictions](#42-training-and-predictions)
+  - [5. Results & Conclusions](#5-results--conclusions)
+  - [6. Next Steps](#6-next-steps)
 
 ## 1. Introduction
 
@@ -21,7 +24,7 @@ The Structure of the project is the following:
 
 The aim of this project is to conduct a complete data science pipeline from real raw data provided by Starbucks. 
 
-You can follow all the code in the included Python Notebook or in this [Medium article](https://www.medium.com).
+You can follow all the code and a more detailed explanation of the process in the included Python Notebook or in this [Medium article](https://www.medium.com).
 
 ### 1.2 The Data
 
@@ -67,6 +70,7 @@ Finally, we will try to predict for a specific user and offer if the transaction
 
 - Notebook.ypnb: Python Notebook with all the code
 - Visualizations: Folder with all presented images
+- df_offers.csv: The pre-processing of the dataframe df_offers takes a lot of time. You can load directly the preprocessed dataframe if you wish.
 
 ## 2. Pre-processing
 
@@ -77,11 +81,68 @@ In this section also basic cleaning activities were performed.
 
 ## 3. Data Exploration and Visualizations
 
+- We have a dataset with 17000 different clients, but for 2175 there is no personal data (Gender, Age and Income).
+57% of all clients are men and 41% women. The mean age is 54.39 years (no data for <18 years clients) and the mean income salary is 65404$/year.
+
+- There are 10 different types of offer. The offers differ in the offer type (Bogo, discount or informational), duration, difficulty and reward.
+
+- The transcripts have four different event types: (Offer received, Offer viewed, offer completed and transactions (client buying a product))
+
+Most of the events are transactions:
+
+| Event           | Number |
+| --------------- | ------ |
+| transaction     | 138953 |
+| offer received  | 76277  |
+| offer viewed    | 57725  |
+| offer completed | 33579  |
+
+Only xx of all the offers sent are viewed. The offers completed are xxx. 
+
+We can see the proportion of offers completed depending of they are previously viewed by the client or not:
+
+In the following image we can see how many transactions are made after an offer is sent during the active period of the offer:
+
+And for the total amount spent:
+
+
+
 
 ## 4. Modeling
 
+### 4.1 Model preparation
+
+In this section we convert all categorical variables to one hot enconding and string True/False variables to Integers so the model can work with them. We drop also the 5 rows with NaN values.
+Split data into train and test sets.
+
+### 4.2 Training and Predictions
+
+## 5. Results & Conclusions
+
+**Analysis**
 
 
-## 5. Conclusions
+**Predictions results:**
+
+| Model                | Accuracy | f1-score |
+| -------------------- | -------- | -------- |
+| Gaussian Naive Bayes | 85.59%   | 35.03%   |
+| MLP                  | 87.16%   | 3.76%    |
+| K-Neighbours         | 86.40%   | 10.72%   |
+| Random Forest*       | 87.68%   | 0.0%     |
+
+*The accuracy if we predict always not completed will be 87.68%. Random Forest is just doing that (f1-score of 0%)
+
+We can see that altough the accuracy is above 80%, it doesn't mean its a good accuracy because if we predict only a offer as not completed, we would achieve an accuracy of 87%. We can see that in the low f1-scores. Looking at the actual metrics I would continue with the Naive Bayes model.
+
+## 6. Next Steps
+
+**Analysis:**
+* xxx
+
+**Predictions:**
+* Feature engineering and use more features to optimize metrics
+* Hyperparameter Tuning to optimize metrics
+
 
 

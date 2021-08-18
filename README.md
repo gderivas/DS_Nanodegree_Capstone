@@ -69,7 +69,7 @@ Finally, we will try to predict for a specific user and offer if the transaction
 
 **Files:**
 
-- Notebook.ypnb: Python Notebook with all the code
+- Starbucks_Capstone_notebook.ipynb: Python Notebook with all the code
 - Visualizations: Folder with all presented images
 - df_offers.csv: The pre-processing of the dataframe df_offers takes a lot of time. You can load directly the preprocessed dataframe if you wish.
 
@@ -142,7 +142,6 @@ Income distribution:
 
 The age is probably correlated with the income and a higher income defines a higher completition rate.
 
-
 ## 4. Modeling
 
 ### 4.1 Model preparation
@@ -158,6 +157,9 @@ Training Models & Generating predictions - See Jupyter Notebook
 ## 5. Results & Conclusions
 
 **Analysis**
+
+* 
+
 
 
 **Predictions results:**
@@ -176,7 +178,7 @@ We can see that altough the accuracy is above 80%, it doesn't mean its a good ac
 ## 6. Next Steps
 
 **Analysis:**
-* xxx
+* More in depth relationship analisys (e.g: relation of completition rate with client data and offer type)
 
 **Predictions:**
 * Feature engineering and use more features to optimize metrics

@@ -62,6 +62,7 @@ Finally, we will try to predict for a specific user and offer if the transaction
 
 - Python
 - Numpy
+- json
 - Pandas
 - Matplotlib
 - Sklearn
@@ -82,7 +83,9 @@ In this section also basic cleaning activities were performed.
 ## 3. Data Exploration and Visualizations
 
 - We have a dataset with 17000 different clients, but for 2175 there is no personal data (Gender, Age and Income).
-57% of all clients are men and 41% women. The mean age is 54.39 years (no data for <18 years clients) and the mean income salary is 65404$/year.
+57% of all clients are men and 41% women. The mean age is 54.39 years (no data for <18 years clients) and the mean income salary is 65404$/year with the following distribution:
+
+<img src="images/Income_distribution.PNG" alt="Income Distribution" width="350"/>
 
 - There are 10 different types of offer. The offers differ in the offer type (Bogo, discount or informational), duration, difficulty and reward.
 
@@ -97,25 +100,60 @@ Most of the events are transactions:
 | offer viewed    | 57725  |
 | offer completed | 33579  |
 
-Only xx of all the offers sent are viewed. The offers completed are xxx. 
+Only 32% of all the offers sent are viewed. The offers completed are the 12%:
+
+<img src="images/offers_viewed.PNG" alt="offers viewed" width="250" height="200"/> <img src="images/offers_completed.PNG" alt="offers completed" width="200" height="200"/>
+
+In the following image we can also see that the informational offers are the less viewed:
+
+<img src="images/offers_viewed_by_type.PNG" alt="offers viewed by type" width="350" />
 
 We can see the proportion of offers completed depending of they are previously viewed by the client or not:
 
+<img src="images/offers_completed_viewed.PNG" alt="offers completed depending of viewed status" width="350" />
+
+The offers viewed are much easier to be completed (logically). Only a few of the non viewed offers are completed.
+
 In the following image we can see how many transactions are made after an offer is sent during the active period of the offer:
+
+<img src="images/n_transactions.PNG" alt="Number of transactions" width="350" />
 
 And for the total amount spent:
 
+<img src="images/amount.PNG" alt="Amount of transactions" width="350"/>
 
+Finally, let's see how the age and the income affect if an offer is completed or not.
+
+**Age:**
+
+Completed Offers mean age: 56.25 years
+Not completed offers mean age: 54.10 years
+Age distribution:
+
+<img src="images/age_distribution.PNG" alt="Age Distribution" width="350"/>
+
+**Income:**
+
+Completed Offers mean income: 70314.4$ 
+Not completed offers mean income: 64684.14 $
+Income distribution:
+
+<img src="images/income_distr.PNG" alt="Income Distribution" width="350"/>
+
+The age is probably correlated with the income and a higher income defines a higher completition rate.
 
 
 ## 4. Modeling
 
 ### 4.1 Model preparation
 
-In this section we convert all categorical variables to one hot enconding and string True/False variables to Integers so the model can work with them. We drop also the 5 rows with NaN values.
+First, we generate a dataframe with all relevant features.
+In this section we also convert all categorical variables to one hot enconding and string True/False variables to Integers so the model can work with them. We drop also the 5 rows with NaN values.
 Split data into train and test sets.
 
 ### 4.2 Training and Predictions
+
+Training Models & Generating predictions - See Jupyter Notebook
 
 ## 5. Results & Conclusions
 

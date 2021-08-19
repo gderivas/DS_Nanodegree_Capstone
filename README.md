@@ -24,7 +24,7 @@ The Structure of the project is the following:
 
 The aim of this project is to conduct a complete data science pipeline from real raw data provided by Starbucks. 
 
-You can follow all the code and a more detailed explanation of the process in the included Python Notebook or in this [Medium article](https://www.medium.com).
+You can follow all the code and a more detailed explanation of the process in the included Python Notebook or in this [Medium article](https://medium.com/@gdrivas/starbucks-challenge-f2a4dc4aed84).
 
 ### 1.2 The Data
 
